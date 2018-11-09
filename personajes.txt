@@ -1,0 +1,3 @@
+personaje1|1|100
+personaje2|2|200
+personaje99|99|9900
