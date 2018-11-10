@@ -7,6 +7,7 @@ public class Personaje1 implements Personaje{
 	private int energia;
 	private Collection<Ataque> ataques;
 	Iterator it=ataques.iterator();
+	
 
 	public Ataque lanza(String nomAtaq){
 		if(ataques==NULL){
@@ -14,12 +15,13 @@ public class Personaje1 implements Personaje{
 			break;
 		}
 		else{
+			int i;
 			while(it.hasNext){
 				Ataque element=it.next();
 				if (element.equals(nomAtaq)){
-					//Falta borrar el ataque que se lanza de la collection "ataques"
+					ataques.remove(i)
 					return element;
-
+				i=i+1;
 				}	
 			}
 

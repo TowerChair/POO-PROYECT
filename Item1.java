@@ -5,8 +5,10 @@ public class Item1 implements Item{
 	private int experienciaQueAporta;
 	private int energiaQueAporta;
 
-	public Item1(String nombre){//Terminar el constructor
+	public Item1(String nombre,int experience,int energy){
 		this.nombre=nombre;
+		this.experienciaQueAporta=experience;
+		this.energiaQueAporta=energy;
 
 	}
 

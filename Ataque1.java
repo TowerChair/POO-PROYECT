@@ -4,6 +4,14 @@ public class Ataque1 implements Ataque{
 	private	int experienciaNecesaria;
 	private	String nombreAtaq;
 
+    
+    public Ataque1(String nombre,int experienciaA,int dano,int experienceN){
+    	this.nombreAtaq=nombre;
+    	this.experienciaQueAporta=experienciaA;
+    	this.danoQueCausa=dano;
+    	this.experienciaNecesaria=experienceN;
+    }
+
 	public int getExperienciaQueAporta(){
 		return this.experienciaQueAporta;
 	}

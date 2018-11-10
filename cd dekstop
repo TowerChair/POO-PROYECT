@@ -1,0 +1,63 @@
+[1mdiff --git a/Ataque1.java b/Ataque1.java[m
+[1mindex 3f6ac08..c0ce7c0 100644[m
+[1m--- a/Ataque1.java[m
+[1m+++ b/Ataque1.java[m
+[36m@@ -4,6 +4,14 @@[m [mpublic class Ataque1 implements Ataque{[m
+ 	private	int experienciaNecesaria;[m
+ 	private	String nombreAtaq;[m
+ [m
+[32m+[m[41m    [m
+[32m+[m[32m    public Ataque1(String nombre,int experienciaA,int dano,int experienceN){[m
+[32m+[m[41m    [m	[32mthis.nombreAtaq=nombre;[m
+[32m+[m[41m    [m	[32mthis.experienciaQueAporta=experienciaA;[m
+[32m+[m[41m    [m	[32mthis.danoQueCausa=dano;[m
+[32m+[m[41m    [m	[32mthis.experienciaNecesaria=experienceN;[m
+[32m+[m[32m    }[m
+[32m+[m
+ 	public int getExperienciaQueAporta(){[m
+ 		return this.experienciaQueAporta;[m
+ 	}[m
+[1mdiff --git a/Item1.java b/Item1.java[m
+[1mindex c64353a..4b405e1 100644[m
+[1m--- a/Item1.java[m
+[1m+++ b/Item1.java[m
+[36m@@ -5,8 +5,10 @@[m [mpublic class Item1 implements Item{[m
+ 	private int experienciaQueAporta;[m
+ 	private int energiaQueAporta;[m
+ [m
+[31m-	public Item1(String nombre){//Terminar el constructor[m
+[32m+[m	[32mpublic Item1(String nombre,int experience,int energy){[m
+ 		this.nombre=nombre;[m
+[32m+[m		[32mthis.experienciaQueAporta=experience;[m
+[32m+[m		[32mthis.energiaQueAporta=energy;[m
+ [m
+ 	}[m
+ [m
+[1mdiff --git a/Personaje1.java b/Personaje1.java[m
+[1mindex 390bfa5..4b6c7e3 100644[m
+[1m--- a/Personaje1.java[m
+[1m+++ b/Personaje1.java[m
+[36m@@ -7,6 +7,7 @@[m [mpublic class Personaje1 implements Personaje{[m
+ 	private int energia;[m
+ 	private Collection<Ataque> ataques;[m
+ 	Iterator it=ataques.iterator();[m
+[32m+[m[41m	[m
+ [m
+ 	public Ataque lanza(String nomAtaq){[m
+ 		if(ataques==NULL){[m
+[36m@@ -14,12 +15,13 @@[m [mpublic class Personaje1 implements Personaje{[m
+ 			break;[m
+ 		}[m
+ 		else{[m
+[32m+[m			[32mint i;[m
+ 			while(it.hasNext){[m
+ 				Ataque element=it.next();[m
+ 				if (element.equals(nomAtaq)){[m
+[31m-					//Falta borrar el ataque que se lanza de la collection "ataques"[m
+[32m+[m					[32mataques.remove(i)[m
+ 					return element;[m
+[31m-[m
+[32m+[m				[32mi=i+1;[m
+ 				}	[m
+ 			}[m
+ [m
