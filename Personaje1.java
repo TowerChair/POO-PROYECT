@@ -9,12 +9,12 @@ public class Personaje1 implements Personaje{
 	private String nombre;
 	private int exp;
 	private int energia;
-	private Collection<Ataque1> ataques;
+	private Collection<Ataque> ataques;
 	
 
-	public Ataque1 lanza(String nomAtaq){
-		Iterator<Ataque1> it=ataques.iterator();
-		Ataque1 element=null;
+	public Ataque lanza(String nomAtaq){
+		Iterator<Ataque> it=ataques.iterator();
+		Ataque element=null;
 		if(ataques==null){
 			System.out.println("No tienes ataque guardados");
 			element=null;
@@ -35,7 +35,7 @@ public class Personaje1 implements Personaje{
 		return element;
 	}
 
-	public void recibeAtaque(Ataque1 atac){
+	public void recibeAtaque(Ataque atac){
 		this.energia=this.energia-atac.getDanoQueCausa();
 	}
 
@@ -44,13 +44,12 @@ public class Personaje1 implements Personaje{
 		this.exp=this.exp+item.getExperienciaQueAporta();
 	}
 
-	public void guarda(Ataque1 ataque){
+	public void guarda(Ataque ataque){
 		ataques.add(ataque);
 	}
 
 
-
-	public Collection<Ataque1> getAtaques(){
+	public Collection<Ataque> getAtaques(){
 		return this.ataques;
 	}
 
