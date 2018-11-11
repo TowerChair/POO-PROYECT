@@ -1,4 +1,4 @@
-
+package poo.videojuego;
 
 public class Item1 implements Item{
 	private String nombre;
@@ -13,7 +13,7 @@ public class Item1 implements Item{
 	}
 
 	public String getNombre(){
-		return this.nombre();
+		return this.nombre;
 	}
 
 	public int getEnergiaQueAporta(){

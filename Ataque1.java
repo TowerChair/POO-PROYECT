@@ -1,3 +1,4 @@
+package poo.videojuego;
 public class Ataque1 implements Ataque{
 	private	int experienciaQueAporta;
 	private	int danoQueCausa;

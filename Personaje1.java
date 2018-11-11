@@ -1,4 +1,8 @@
-import java.util.Enumeration;
+package poo.videojuego;
+import java.util.*;
+import poo.videojuego.Ataque1;
+import java.io.*;
+import poo.videojuego.Item1;
 
 
 public class Personaje1 implements Personaje{
@@ -6,27 +10,29 @@ public class Personaje1 implements Personaje{
 	private int exp;
 	private int energia;
 	private Collection<Ataque> ataques;
-	Iterator it=ataques.iterator();
 	
 
 	public Ataque lanza(String nomAtaq){
-		if(ataques==NULL){
+		Iterator<Ataque> it=ataques.iterator();
+		Ataque element=null;
+		if(ataques==null){
 			System.out.println("No tienes ataque guardados");
-			break;
+			element=null;
 		}
 		else{
-			int i;
-			while(it.hasNext){
-				Ataque element=it.next();
-				if (element.equals(nomAtaq)){
-					ataques.remove(i)
-					return element;
+			int i=-1;
+			while(it.hasNext()){
+				element=it.next();
 				i=i+1;
+				if (element.equals(nomAtaq)){
+					ataques.remove(i);
+					
+				
 				}	
 			}
 
 		}
-
+		return element;
 	}
 
 	public void recibeAtaque(Ataque atac){
@@ -34,8 +40,8 @@ public class Personaje1 implements Personaje{
 	}
 
 	public void usa(Item item){
-		this.energia=this.energia+atac.getEnergiaQueAporta();
-		this.exp=this.exp+atac.getExperienciaQueAporta();
+		this.energia=this.energia+item.getEnergiaQueAporta();
+		this.exp=this.exp+item.getExperienciaQueAporta();
 	}
 
 	public void guarda(Ataque ataque){
@@ -60,8 +66,18 @@ public class Personaje1 implements Personaje{
 		return this.nombre;
 	}
 
-	public guardaEnArchivo(String nomArch){
+	public void guardaEnArchivo(String nomArch){
 		// Este metodo falta por completo ......................
+		File f;
+		f = new File("personajes.txt");
+		try{
+		FileWriter w = new FileWriter(f);
+		BufferedWriter bw = new BufferedWriter(w);
+		PrintWriter wr = new PrintWriter(bw);   
+		wr.append(getNombre()+"|"+getEnergia()+"|"+getExperiencia()); 
+		wr.close();
+		bw.close();
+		}catch(IOException e){};
 
 	}
 
